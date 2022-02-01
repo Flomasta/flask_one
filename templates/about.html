@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container"><h1>Hello, about!</h1>
+        <ul>
+            <p>{% for name in names %}
+                {% if name == 'Wes' %}
+                    <li>Wes is the best!</li>
+                {% else %}
+                    <li>{{ name }}</li>
+                {% endif %}
+            {% endfor %}
+
+            </p>
+        </ul>
+    </div>
+{% endblock %}
+

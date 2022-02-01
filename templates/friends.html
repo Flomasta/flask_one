@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container"><h1>Hello, friends!</h1>
+        <br>
+        <form action="/friends" method="post">
+            <input type="text" placeholder="Name" name='name'>
+            <input type="submit" value="Add Name" name='name' class="btn btn-secondary">
+        </form>
+        {% for friend in friends %}
+            {{ friend.name }} <a href="/updates/{{ friend.id }}" class="btn btn-outline-secondary btn-sm">Update</a>
+            <a href="/delete/{{ friend.id }}" class="btn btn-outline-danger btn-sm">Delete</a>
+            <br>
+        {% endfor %}
+
+    </div>
+{% endblock %}
